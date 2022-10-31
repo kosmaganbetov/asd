@@ -1,7 +1,9 @@
+import Tourmate from "./container/Tourmate/Tourmate";
+
 function App() {
   return (
     <div className="App">
-      <p></p>
+      <Tourmate />
     </div>
   );
 }

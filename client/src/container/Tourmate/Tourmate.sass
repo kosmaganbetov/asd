@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap')
+$font:'Merriweather', serif
+$color:rgb(66, 66, 66)
+body
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: $font
+    text-decoration: none
+    width: 100%
+.tourmate_inner
+    display: flex
+    padding-top: 30px
+    margin: auto
+    .tourmate_card
+        border: 1px solid rgb(189, 189, 189)
+        margin-left: 450px
+        border-radius: 10px
+        width: 252px
+        padding-top: 20px
+        padding-bottom: 20px
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 4px
+        &_info
+            display: flex
+            align-items: center
+            justify-content: space-around
+            width: 200px
+            &_image
+                margin-left: 15px
+            &_image img
+                border: 1px solid lightgray
+                width: 60px
+                height: 60px
+                border-radius: 50%
+            &_text
+                margin-left: 10px
+                &_title
+                    font-size: 20px
+                    font-weight: 700
+                    min-height: 24px
+                    margin: 0
+                    color: $color
+                &_p
+                    font-size: 12px
+                    font-weight: 400
+                    min-height: 14px
+                    color: $color
+        &_rating
+            margin-left: 25px
+            &_text
+            color: $color
+            font-size: 12px
+            font-weight: 400
+        &_line
+            border-bottom: 1px solid rgb(224, 224, 224)
+            background-color: rgb(224, 224, 224)
+            height: 1px
+            color: rgb(224, 224, 224)
+            margin-bottom: 10px
+            margin-left: 20px
+            margin-right: 20px
+        &_items
+            margin-left: 20px
+            &_item
+                display: flex
+                align-items: center
+                margin-bottom: 10px
+                & p
+                    font-size: 12px
+                    font-weight: 400
+                    margin-right: 15px
+                    margin-left: 6px
+                    margin-top: 0
+                    margin-bottom: 0
+                    color: $color
+        &_buttons
+            &_contact
+                background-color: rgb(0, 168, 152)
+                border-radius: 18px
+                border-style: none
+                color: white
+                width: 180px
+                height: 36px
+                margin-left: 30px
+                font-size: 15px
+                font-weight: 700
+                cursor: pointer
+                margin-bottom: 15px
+            &_share
+                display: flex
+                align-items: center
+                border-style: none
+                background: none
+                color: rgb(0, 168, 152)
+                font-size: 14px
+                font-weight: 700
+                cursor: pointer
+                margin-left: 50px
+                margin-top: 0
+                & span
+                    margin-left: 15px
+.tourmate_profile
+    margin-left: 50px
+    &_video
+        background: black
+    &_title h3
+        color: $color
+        font-size: 20px
+        font-weight: 700
+        margin: 0
+        margin-bottom: 20px
+.tourmate_text 
+    padding-top: 20px
+    margin-left: 1000px
+    & p
+    width: 720px
+    font-size: 14px
+    color: $color
+.tourmate_gallery
+    margin-left: 700px
+    &_title h3
+        color: $color
+        font-size: 20px
+    &_images
+        margin-bottom: 250px
+        margin-left: 310px
+        &_top
+            display: flex
+            & img
+                width: 370px
+                margin-left: 7px
+                margin-bottom: 7px
+                height: 219px
+        &_bottom
+            display: flex
+            margin-left: 10px
+            & img
+                width: 245px
+                height: 138px
+                margin-left: 7px
+    &_link
+        margin-left: 625px
+        margin-top: 20px
+        & a
+            font-size: 14px
+            cursor: pointer
+            color: $color
+    &_line
+        border-bottom: 2px solid rgb(224, 224, 224)
+        width: 750px
+        margin-top: 40px
+    
