@@ -7,6 +7,7 @@ import FooterMain from "./components/FooterMain/FooterMain";
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
 
       <div className="TravellaTitle">
         <h1>Travella это</h1>
@@ -28,6 +29,9 @@ function App() {
       </div>
       
         <FooterMain img={require("./components/FooterMain/Assets/phone_1.jpg")}/>
+=======
+      <p></p>
+>>>>>>> e490236518b2b37409db08e03708feedf8c250be
     </div>
   );
 }
