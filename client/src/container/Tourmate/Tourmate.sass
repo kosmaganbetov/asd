@@ -2,7 +2,7 @@
 $font:'Merriweather', serif
 $color:rgb(66, 66, 66)
 body
-    margin: 0
+    margin: 0 auto
     padding: 0
     box-sizing: border-box
     font-family: $font
@@ -11,10 +11,10 @@ body
 .tourmate_inner
     display: flex
     padding-top: 30px
-    margin: auto
+    max-width: 1100px
+    margin: 0 auto
     .tourmate_card
         border: 1px solid rgb(189, 189, 189)
-        margin-left: 450px
         border-radius: 10px
         width: 252px
         padding-top: 20px
@@ -74,14 +74,17 @@ body
                     margin-bottom: 0
                     color: $color
         &_buttons
+            max-width: 252px
+            display: flex
+            justify-content: center
             &_contact
                 background-color: rgb(0, 168, 152)
                 border-radius: 18px
                 border-style: none
+                margin: auto
                 color: white
                 width: 180px
                 height: 36px
-                margin-left: 30px
                 font-size: 15px
                 font-weight: 700
                 cursor: pointer
@@ -95,7 +98,6 @@ body
                 font-size: 14px
                 font-weight: 700
                 cursor: pointer
-                margin-left: 50px
                 margin-top: 0
                 & span
                     margin-left: 15px
@@ -109,43 +111,49 @@ body
         font-weight: 700
         margin: 0
         margin-bottom: 20px
-.tourmate_text 
-    padding-top: 20px
-    margin-left: 1000px
-    & p
-    width: 720px
-    font-size: 14px
-    color: $color
-.tourmate_gallery
-    margin-left: 700px
-    &_title h3
+.tourmate_text
+    max-width: 1200px
+    margin-left: auto
+    &_inner
+        padding-top: 20px
+        width: 720px
+        margin: auto
+        & p
+        font-size: 14px
         color: $color
-        font-size: 20px
+.tourmate_gallery
+    max-width: 1200px
+    margin: 0 auto
+    &_title
+        max-width: 450px
+        text-align: right 
+        & h3
+            color: $color
+            font-size: 20px
     &_images
-        margin-bottom: 250px
-        margin-left: 310px
+        width: 1370px
+        margin-bottom: 150px
+        text-align: right
         &_top
-            display: flex
             & img
                 width: 370px
                 margin-left: 7px
-                margin-bottom: 7px
                 height: 219px
         &_bottom
-            display: flex
-            margin-left: 10px
             & img
                 width: 245px
                 height: 138px
-                margin-left: 7px
+                padding-left: 4px
     &_link
-        margin-left: 625px
-        margin-top: 20px
+        width: 1500px
+        margin-top: 10px
+        text-align: right
         & a
             font-size: 14px
             cursor: pointer
             color: $color
     &_line
+        margin-left: auto
         border-bottom: 2px solid rgb(224, 224, 224)
         width: 750px
         margin-top: 40px
