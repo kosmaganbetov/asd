@@ -1,29 +1,34 @@
-.TravellaTitle {
+.travella_title {
     color: rgb(90, 90, 87);
-    margin-left: 2%;
-    margin-bottom: 3%;
-}
-
-.TravellaInfoBlock{
-    background-color: rgb(233, 225, 225);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    width: 89%;
     margin-left: 5%;
+    margin-bottom: 2%;
 }
-.TravellaImg{
+.travella_container{
+    display: flex;
+    justify-content: space-around;
+}
+.travella_img{
     width: 160px;
     height: 210px;
 }
-.TravellaInfo{
- display: flex;
- height: 210px;
- width: 400px;
+.travella_info{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 210px;
+    background-color: #e9e1e1;
+    width: 75%;
 }
-.TravInfoText{
-    background-color: rgb(233, 225, 225);
-    width: 270px;
-    margin-left: 10px;
+.trav_info_text{
+    width: 33%;
+}
+.text{
+    position: relative;
+    bottom: 78%;
+    left: 10%;
+    font-style: 18px;
+    font-weight: bold;
+    color: rgb(85, 81, 81);;
+    
 }

@@ -15,24 +15,24 @@
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.FooterInfo{
+.footer_info{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     width: 30%;
 }
-.FooterIcons{
+.footer_icons{
     display: flex;
     flex-direction: column;
 }
 
-.FooterContainer{
+.footer_container{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    margin-top: 5%;
+    margin-top: 43%;
 }
-.FooterTitle{
+.footer_title{
     color: rgb(90, 90, 87);
     margin-left: 2%;
 }
