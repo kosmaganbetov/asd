@@ -13,22 +13,30 @@ const TourmateInfo = () => {
       </div>
 
       <div className="tourmate_card">
-        <img className="tourmate_card_img" src={Ronaldo} alt="img"></img>
-        <div className="title_travel">Криштиану Роналду</div>
-        <div className="text_travel">Покажу достопримеча...</div>
+        <div className="ronaldo">
+          <img className="tourmate_card_img" src={Ronaldo} alt="img"></img>
+          <h2 className="title_travel_ronaldo">Криштиану Роналду</h2>
+          <h4 className="text_travel">Always Ready</h4>
+        </div>
+        <div className="bill">
+          <img className="tourmate_card_img" src={Bill} alt="img"></img>
+          <h2 className="title_travel_bill">Билл Гейтс</h2>
+          <h4 className="text_travel">Покажу достопримеча...</h4>
+        </div>
 
-        <img className="tourmate_card_img" src={Bill} alt="img"></img>
-        <div className="title_travel">Билл Гейтс</div>
-        <div className="text_travel">Always Ready</div>
+        <div className="bezos">
+          <img className="tourmate_card_img" src={Bezos} alt="img"></img>
+          <h2 className="title_travel_bezos">Джеф Безос</h2>
+          <h4 className="text_travel">Я всегда готов показать...</h4>
+        </div>
 
-        <img className="tourmate_card_img" src={Bezos} alt="img"></img>
-        <div className="title_travel">Джеф Безос</div>
-        <div className="text_travel">Я всегда готов показать...</div>
-
-        <img className="tourmate_card_img" src={Mask} alt="img"></img>
-        <div className="title_travel">Илон Маск</div>
-        <div className="text_travel">Я Илон, покажу тебе св...</div>
+        <div className="mask">
+          <img className="tourmate_card_img" src={Mask} alt="img"></img>
+          <h2 className="title_travel_mask">Илон Маск</h2>
+          <h4 className="text_travel">Я Илон, покажу тебе св...</h4>
+        </div>
       </div>
+      <div className="tormate_text"></div>
     </>
   );
 };
