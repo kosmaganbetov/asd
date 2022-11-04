@@ -1,0 +1,61 @@
+.tourmate_title{
+    color: rgb(90, 90, 87);
+    position: absolute;
+    top: 38%;
+    left: 5%;
+}
+
+.tourmate_card{
+    position: relative;
+    height: 315px;
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 20%;
+}
+
+.tourmate_card_img{
+    width: 260px;
+    height: 350px;
+    border-radius: 15px;
+    filter: brightness(60%);
+    object-fit: cover;
+}
+
+.title_travel_ronaldo{
+    color: rgb(205 205 184);
+    font-size: 15px;
+    position: absolute;
+    top: 80%;
+    right: 83%; 
+}
+.title_travel_bill{
+    color: rgb(205 205 184);
+    font-size: 15px;
+    position: absolute;
+    top: 80%;
+    right: 64%;
+}
+.title_travel_bezos{
+    color: rgb(205 205 184);
+    font-size: 15px;
+    position: absolute;
+    top: 80%;
+    right: 40%;
+}
+.title_travel_mask{
+    color: rgb(205 205 184);
+    font-size: 15px;
+    position: absolute;
+    top: 80%;
+    right: 17%;
+}    
+.text_travel{
+    color: rgb(205 205 184);
+    font-size: 15px;
+    position: relative;
+    bottom: 24%;
+    left: 5%;
+  
+}
