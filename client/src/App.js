@@ -15,7 +15,7 @@ function App() {
           </>
         }
       >
-        <Route path={"/"} element={<Tourmate />} />
+        <Route path={"/tourmate"} element={<Tourmate />} />
       </Route>
     </Routes>
   );
