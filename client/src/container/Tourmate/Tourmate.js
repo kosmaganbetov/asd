@@ -11,6 +11,7 @@ import Gallery3 from "../../assets/image/photo3.jpg";
 import Gallery4 from "../../assets/image/photo4.jpg";
 import Gallery5 from "../../assets/image/photo5.jpg";
 import "./Tourmate.sass";
+
 const Tourmate = () => {
   return (
     <div className="tourmate">
@@ -29,7 +30,6 @@ const Tourmate = () => {
         <div className="tourmate_card_rating">
           <p className="tourmate_card_rating_text">★★★★☆ 46 отзывов</p>
         </div>
-        {/* <div className="tourmate_card_line"></div> */}
         <div className="tourmate_card_items">
           <div className="tourmate_card_items_item">
             <img src={Location} />
@@ -69,7 +69,7 @@ const Tourmate = () => {
         <div className="tourmate_profile_video">
           <video
             controls
-            width="732"
+            width="100%"
             height="367"
             poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
           >

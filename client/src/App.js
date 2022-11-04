@@ -1,10 +1,23 @@
 import Tourmate from "./container/Tourmate/Tourmate";
+import { Outlet, Route, Routes } from "react-router-dom";
+import AppToolbar from "./components/UI/AppToolbar/AppToolbar";
 
 function App() {
   return (
-    <div className="App">
-      <Tourmate />
-    </div>
+    <Routes>
+      <Route
+        element={
+          <>
+            <AppToolbar />
+            <main>
+              <Outlet />
+            </main>
+          </>
+        }
+      >
+        <Route path={"/"} element={<Tourmate />} />
+      </Route>
+    </Routes>
   );
 }
 
