@@ -14,78 +14,72 @@ import "./Tourmate.sass";
 const Tourmate = () => {
   return (
     <div className="tourmate">
-      <div className="tourmate_inner">
-        <div className="tourmate_card">
-          <div className="tourmate_card_info">
-            <div className="tourmate_card_info_image">
-              <img src={BillGates} />
-            </div>
-            <div className="tourmate_card_info_text">
-              <h2 className="tourmate_card_info_text_title">Бил Гейтс</h2>
-              <p className="tourmate_card_info_text_p">
-                Америкадағы <br /> қарапайым жігіт
-              </p>
-            </div>
+      <div className="tourmate_card">
+        <div className="tourmate_card_info">
+          <div className="tourmate_card_info_image">
+            <img src={BillGates} />
           </div>
-          <div className="tourmate_card_rating">
-            <p className="tourmate_card_rating_text">★★★★☆ 46 отзывов</p>
-          </div>
-          <div className="tourmate_card_line"></div>
-
-          <div className="tourmate_card_items">
-            <div className="tourmate_card_items_item">
-              <img src={Location} />
-              <p>Нью-Йорк</p>
-            </div>
-            <div className="tourmate_card_items_item">
-              <img src={Web} />
-              <p>Английский, Казахский, Русский</p>
-            </div>
-            <div className="tourmate_card_items_item">
-              <img src={Verified} />
-              <p>Верифицирован</p>
-            </div>
-            <div className="tourmate_card_items_item">
-              <img src={Clock} />
-              <p>Время отклика менее 12 часов</p>
-            </div>
-            <div className="tourmate_card_items_item">
-              <img src={Walk} />
-              <p>7 туров</p>
-            </div>
-          </div>
-
-          <div className="tourmate_card_buttons">
-            <button className="tourmate_card_buttons_contact">Связаться</button>
-          </div>
-          <div className="tourmate_card_buttons">
-            <a className="tourmate_card_buttons_share">
-              <img src={Share} /> <span>Поделиться</span>
-            </a>
+          <div className="tourmate_card_info_text">
+            <h2 className="tourmate_card_info_text_title">Бил Гейтс</h2>
+            <p className="tourmate_card_info_text_p">
+              Америкадағы <br /> қарапайым жігіт
+            </p>
           </div>
         </div>
-
-        <div className="tourmate_profile">
-          <div className="tourmate_profile_title">
-            <h3>Привет, добро пожаловать в мой профиль!</h3>
+        <div className="tourmate_card_rating">
+          <p className="tourmate_card_rating_text">★★★★☆ 46 отзывов</p>
+        </div>
+        {/* <div className="tourmate_card_line"></div> */}
+        <div className="tourmate_card_items">
+          <div className="tourmate_card_items_item">
+            <img src={Location} />
+            <p>Нью-Йорк</p>
           </div>
-          <div className="tourmate_profile_video">
-            <video
-              controls
-              width="732"
-              height="367"
-              poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
-            >
-              <source
-                src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
-                type="video/mp4"
-              />
-            </video>
+          <div className="tourmate_card_items_item">
+            <img src={Web} />
+            <p>Английский, Казахский, Русский</p>
           </div>
+          <div className="tourmate_card_items_item">
+            <img src={Verified} />
+            <p>Верифицирован</p>
+          </div>
+          <div className="tourmate_card_items_item">
+            <img src={Clock} />
+            <p>Время отклика менее 12 часов</p>
+          </div>
+          <div className="tourmate_card_items_item">
+            <img src={Walk} />
+            <p>7 туров</p>
+          </div>
+        </div>
+        <div className="tourmate_card_buttons">
+          <button className="tourmate_card_buttons_contact">Связаться</button>
+        </div>
+        <div className="tourmate_card_buttons">
+          <a className="tourmate_card_buttons_share">
+            <img src={Share} /> <span>Поделиться</span>
+          </a>
         </div>
       </div>
-      <div className="tourmate_text">
-        <div className="tourmate_text_inner">
+
+      <div className="tourmate_profile">
+        <div className="tourmate_profile_title">
+          <h3>Привет, добро пожаловать в мой профиль!</h3>
+        </div>
+        <div className="tourmate_profile_video">
+          <video
+            controls
+            width="100%"
+            height="367"
+            poster="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-HD.jpg"
+          >
+            <source
+              src="https://cdn.plyr.io/static/demo/View_From_A_Blue_Moon_Trailer-576p.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div className="tourmate_text">
           <p>
             С самого детства мои учителя говорили мне, что я должен быть гидом,
             быть разносторонним и говорить на языках. Но когда пришло время
@@ -101,7 +95,7 @@ const Tourmate = () => {
             Португалии и начал совершать туры по всей стране.
           </p>
           <p>
-            Сейчас, спустя 6 лет,у меня есть свой бизнес, мои клиенты,и я
+            Сейчас, спустя 6 лет,у меня есть свой бизнес, мои клиенты, и я
             работаю в других странах.
           </p>
         </div>
@@ -127,7 +121,6 @@ const Tourmate = () => {
           <div className="tourmate_gallery_link">
             <a>Посмотреть все фотографии</a>
           </div>
-          <div className="tourmate_gallery_line"></div>
         </div>
       </div>
     </div>
