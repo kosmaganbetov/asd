@@ -1,0 +1,42 @@
+.TourmateInfoCard
+    border-radius: 13px
+    height: 315px
+    width: 210px
+    position: relative
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    padding: 0 20px 
+    &_bgimg
+        width: 210px
+        height: 315px
+        object-fit: cover
+        position: absolute
+        top: 0
+        left:0
+        border-radius: 10px
+        z-index: 0
+        filter: brightness(60%)
+    &_info_block
+        z-index: 1
+    &_title
+        color: rgb(255, 255, 255)
+        font-family: Merriweather
+        font-size: 14px
+        font-weight: 600
+        margin: 5px 0
+    &_status
+        margin: 5px 0 20px 0
+        color: rgb(255, 255, 255)
+        font-family: Merriweather
+        font-size: 12px
+        width: 100%
+        max-width: 170px
+        font-weight: 400
+        max-height: 20px
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+
+
