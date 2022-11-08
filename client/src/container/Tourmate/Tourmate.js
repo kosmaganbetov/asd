@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import BillGates from "../../assets/image/billgates.png";
 import Location from "../../assets/image/location.png";
 import Web from "../../assets/image/web.png";
@@ -12,7 +13,7 @@ import Gallery4 from "../../assets/image/photo4.jpg";
 import Gallery5 from "../../assets/image/photo5.jpg";
 import "./Tourmate.sass";
 
-const Tourmate = () => {
+const Tourmate = (props) => {
   return (
     <div className="tourmate">
       <div className="tourmate_card">
@@ -21,7 +22,7 @@ const Tourmate = () => {
             <img src={BillGates} />
           </div>
           <div className="tourmate_card_info_text">
-            <h2 className="tourmate_card_info_text_title">Бил Гейтс</h2>
+            <h2 className="tourmate_card_info_text_title">{props.name}</h2>
             <p className="tourmate_card_info_text_p">
               Америкадағы <br /> қарапайым жігіт
             </p>
@@ -33,23 +34,31 @@ const Tourmate = () => {
         <div className="tourmate_card_items">
           <div className="tourmate_card_items_item">
             <img src={Location} />
-            <p>Нью-Йорк</p>
+            <p>{props.city}</p>
           </div>
           <div className="tourmate_card_items_item">
             <img src={Web} />
-            <p>Английский, Казахский, Русский</p>
+            <p>
+              {props.languages.map((language) => {
+                return (
+                  <span key={language}> {language} </span>
+                  // eslint-disable-next-line semi
+                );
+              })}
+              ;
+            </p>
           </div>
           <div className="tourmate_card_items_item">
             <img src={Verified} />
-            <p>Верифицирован</p>
+            {props.verified ? <p>Верифицирован</p> : <p> Не верифицирован</p>}
           </div>
           <div className="tourmate_card_items_item">
             <img src={Clock} />
-            <p>Время отклика менее 12 часов</p>
+            <p>Время отклика: {props.timeToAnswer} часов</p>
           </div>
           <div className="tourmate_card_items_item">
             <img src={Walk} />
-            <p>7 туров</p>
+            <p>{props.tours} туров</p>
           </div>
         </div>
         <div className="tourmate_card_buttons">
