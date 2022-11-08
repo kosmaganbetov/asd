@@ -1,0 +1,12 @@
+{
+    "_id": "123ujashd712393sdajs2",
+    "photo": "../../assets/image/billgates.png",
+    "name": "Bill Gates",
+    "verified": true,
+    "languages": [
+        "Английский", "Казахский", "Русский"
+    ],
+    "timeToAnswer": 12,
+    "tours": 7,
+    "city": "New York"
+}
