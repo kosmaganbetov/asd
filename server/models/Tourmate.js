@@ -26,6 +26,10 @@ const TourmateSchema = new Schema({
     type: Boolean,
     default: false
   },
+  status: {
+    type: String,
+    required: true
+  },
   image: String
 });
 
