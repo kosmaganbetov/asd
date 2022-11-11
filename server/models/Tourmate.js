@@ -12,7 +12,11 @@ const TourmateSchema = new Schema({
   },
   description: {
     type: String,
-    maxLength: 150
+    maxLength: 50
+  },
+  text: {
+    type: String,
+    maxLength: 250
   },
   location: {
     type: String,

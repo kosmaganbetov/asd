@@ -15,6 +15,7 @@ const TourmateInfo = ({ tourmates }) => {
               return (
                 <TourmateInfoCard
                   key={tourmate._id}
+                  id={tourmate._id}
                   name={tourmate.name}
                   surname={tourmate.surname}
                   image={tourmate.image}

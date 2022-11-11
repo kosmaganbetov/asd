@@ -2,19 +2,17 @@
 import React from "react";
 import { uploadsUrl } from "../../../../constants";
 import "./TourmateInfoCard.sass";
+import { useNavigate } from "react-router-dom";
 
-const TourmateInfoCard = ({ name, image, surname, status }) => {
-  let imageSrc;
-  if (image) {
-    imageSrc = `${uploadsUrl}/${image}`;
-  } else {
-    imageSrc =
-      "https://protkd.com/wp-content/uploads/2017/04/default-image.jpg";
-    console.log(imageSrc);
-  }
+const TourmateInfoCard = ({ id, name, image, surname, status }) => {
+  const navigate = useNavigate();
+
+  const redirectToTourmate = () => {
+    navigate(`/${id}`);
+  };
 
   return (
-    <div className="TourmateInfoCard">
+    <div className="TourmateInfoCard" onClick={redirectToTourmate}>
       <img className="TourmateInfoCard_bgimg" src={`${uploadsUrl}/${image}`} />
       <div className="TourmateInfoCard_info_block">
         <h3 className="TourmateInfoCard_title">
