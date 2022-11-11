@@ -11,20 +11,35 @@ import Gallery3 from "../../assets/images/photo3.jpg";
 import Gallery4 from "../../assets/images/photo4.jpg";
 import Gallery5 from "../../assets/images/photo5.jpg";
 import "./Tourmate.sass";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
+import { fetchTourmate } from "../../store/actions/tourmatesActions";
+import { useDispatch, useSelector } from "react-redux";
+import { uploadsUrl } from "../../constants";
 
 const Tourmate = () => {
+  const params = useParams();
+  const dispatch = useDispatch();
+  const tourmate = useSelector((state) => state.tourmates.tourmate);
+
+  useEffect(() => {
+    dispatch(fetchTourmate(params.id));
+  }, []);
+
+  console.log(tourmate);
+
   return (
     <div className="tourmate">
       <div className="tourmate_card">
         <div className="tourmate_card_info">
           <div className="tourmate_card_info_image">
-            <img src={BillGates} />
+            <img src={`${uploadsUrl}/${tourmate?.image}`} />
           </div>
           <div className="tourmate_card_info_text">
-            <h2 className="tourmate_card_info_text_title">Бил Гейтс</h2>
-            <p className="tourmate_card_info_text_p">
-              Америкадағы <br /> қарапайым жігіт
-            </p>
+            <h2 className="tourmate_card_info_text_title">
+              {tourmate.name} {tourmate.surname}
+            </h2>
+            <p className="tourmate_card_info_text_p">{tourmate.description}</p>
           </div>
         </div>
         <div className="tourmate_card_rating">
@@ -33,15 +48,19 @@ const Tourmate = () => {
         <div className="tourmate_card_items">
           <div className="tourmate_card_items_item">
             <img src={Location} />
-            <p>Нью-Йорк</p>
+            <p>{tourmate.location}</p>
           </div>
           <div className="tourmate_card_items_item">
             <img src={Web} />
-            <p>Английский, Казахский, Русский</p>
+            <p>
+              {tourmate?.languages?.map((language) => {
+                return <span key={language}>{language}, </span>;
+              })}
+            </p>
           </div>
           <div className="tourmate_card_items_item">
             <img src={Verified} />
-            <p>Верифицирован</p>
+            <p>{tourmate.verificate ? "Верифицирован" : "Не верифицирован"}</p>
           </div>
           <div className="tourmate_card_items_item">
             <img src={Clock} />
@@ -80,24 +99,7 @@ const Tourmate = () => {
           </video>
         </div>
         <div className="tourmate_text">
-          <p>
-            С самого детства мои учителя говорили мне, что я должен быть гидом,
-            быть разносторонним и говорить на языках. Но когда пришло время
-            поступать в колледж, у меня было много интересов, поэтому я выбрал
-            политологию. Это был отличный курс, но не для меня. После окончания
-            колледжа я начал работать на разных работах, начиная с почты и
-            заканчивая строительством и сбором платы за проезд.Однажды ни с того
-            ни с сего ко мне пришла работа в сфере туризма,и я согласился,
-            конечно.
-          </p>
-          <p>
-            Я прошел курсы и занятия с одним из лучших официальных гидов
-            Португалии и начал совершать туры по всей стране.
-          </p>
-          <p>
-            Сейчас, спустя 6 лет,у меня есть свой бизнес, мои клиенты, и я
-            работаю в других странах.
-          </p>
+          <p>{tourmate.text}</p>
         </div>
       </div>
 
