@@ -1,10 +1,11 @@
 import React from "react";
-import "./FooterMain.scss";
-import Phone from "../../assets/images/phone_1.jpg";
+import "./FooterMain.sass";
+import Phone from "../../../assets/images/phone_1.jpg";
+import Container from "../../UI/Container/Container";
 
 const FooterMain = () => {
   return (
-    <footer>
+    <Container>
       <div className="footer_container">
         <div className="footer_info">
           <div className="footer_title">
@@ -40,7 +41,7 @@ const FooterMain = () => {
           </a>
         </div>
       </div>
-    </footer>
+    </Container>
   );
 };
 
