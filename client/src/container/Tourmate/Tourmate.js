@@ -1,4 +1,4 @@
-import BillGates from "../../assets/images/billgates.png";
+// import BillGates from "../../assets/images/billgates.png";
 import Location from "../../assets/images/location.png";
 import Web from "../../assets/images/web.png";
 import Verified from "../../assets/images/verified.png";
@@ -21,7 +21,7 @@ const Tourmate = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const tourmate = useSelector((state) => state.tourmates.tourmate);
-
+  console.log(tourmate);
   useEffect(() => {
     dispatch(fetchTourmate(params.id));
   }, []);
