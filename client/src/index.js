@@ -8,10 +8,12 @@ import "@fontsource/merriweather";
 import { configureStore } from "@reduxjs/toolkit";
 import tourmatesReducer from "./store/reducers/tourmatesReducer";
 import { Provider } from "react-redux";
+import directionsReducer from "./store/reducers/directionReducer";
 
 const store = configureStore({
   reducer: {
     tourmates: tourmatesReducer,
+    directions: directionsReducer,
   },
 });
 

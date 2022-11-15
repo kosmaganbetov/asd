@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const tourmates = require("./routes/tourmates");
-
+const directions = require("./routes/directions")
 const app = express();
 
 const PORT = 8000;
@@ -11,7 +11,7 @@ app.use(cors());
 app.use(express.static("public"));
 app.use(express.json());
 app.use("/tourmates", tourmates);
-
+app.use("/directions",directions)
 const run = async () => {
   await mongoose.connect("mongodb://localhost/travella", {useNewUrlParser: true});
   console.log("Connected to mongo DB");
