@@ -9,11 +9,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import tourmatesReducer from "./store/reducers/tourmatesReducer";
 import { Provider } from "react-redux";
 import directionsReducer from "./store/reducers/directionReducer";
+import toursReducer from "./store/reducers/toursReducer";
 
 const store = configureStore({
   reducer: {
     tourmates: tourmatesReducer,
     directions: directionsReducer,
+    tours: toursReducer,
   },
 });
 
