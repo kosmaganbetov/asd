@@ -14,8 +14,8 @@ const ToursInfo = ({ tours }) => {
                 key={tours[tour]._id}
                 title={tours[tour].title}
                 image={tours[tour].image}
-                tourmateImage={tours[tour].tourmateID.image}
-                torumateName={tours[tour].tourmateID.name}
+                tourmateImage={tours[tour].tourmateID?.image}
+                torumateName={tours[tour].tourmateID?.name}
               />
             );
           })}

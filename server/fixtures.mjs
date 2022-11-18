@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import Direction from './models/Direction.js';
+import Tour from './models/Tour.js';
 import Tourmate from './models/Tourmate.js';
 
 mongoose.connect("mongodb://localhost/travella", {useNewUrlParser: true});
@@ -11,11 +12,12 @@ db.once('open', async () => {
     try {
         await db.dropCollection('directions');
         await db.dropCollection('tourmates');
+        await db.dropCollection('tours');
     } catch (e) {
         console.log('Collections were not present, skipping drop...');
     }
 
-    await Tourmate.create(
+    const [Bill, Ilon, Jeff] = await Tourmate.create(
         {
             name:"Билл",
             surname: "Гейст",
@@ -69,6 +71,29 @@ db.once('open', async () => {
             name:"Англия",
             description:"Величественная Великобритания",
             image:"england.jpg"
+        },
+    )
+    await Tour.create(
+        {
+            title:"Прелести Мангистау",
+            tourmateID: Ilon._id,
+            price: 300000,
+            description:"Открой для себя жана Казахстан",
+            image:"kz.jpg"
+        },
+        {
+            title:"Тур по Манхэттен",
+            tourmateID: Jeff._id,
+            price: 220500,
+            description:"Открой для себя жана Казахстан",
+            image:"england.jpg"
+        },
+        {
+            title:"Глазго: City Center",
+            tourmateID: Bill._id,
+            price: 150000,
+            description:"Открой для себя жана Казахстан",
+            image:"usa.jpg"
         },
     )
 
