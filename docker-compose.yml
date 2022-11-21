@@ -12,12 +12,17 @@ services:
     ports:
       - 3000:3000
     working_dir: /app
+    depends_on:
+      - back
 
   back:
     build: ./server
     ports:
       - 8000:8000
     working_dir: /app
+    depends_on:
+      - mongo
+    command: ["bash", "./wait-for-it.sh", "mongo:27017", "--", "npm", "start"]
 
 volumes:
   mongodata:
