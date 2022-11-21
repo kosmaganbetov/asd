@@ -1,0 +1,20 @@
+{
+  "name": "ajs89_esdp_team_4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/onggar.aigerim/ajs89_esdp_team_4.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/onggar.aigerim/ajs89_esdp_team_4/issues"
+  },
+  "homepage": "https://gitlab.com/onggar.aigerim/ajs89_esdp_team_4#readme"
+}
