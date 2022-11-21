@@ -41,3 +41,7 @@ docker image ls
 - Просмотр контейнеров 
 
 docker container ls
+
+# Сборка и запуск бэк и фронт одной командой: 
+
+  docker-compose up --build 
