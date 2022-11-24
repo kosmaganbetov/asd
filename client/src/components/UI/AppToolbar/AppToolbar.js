@@ -10,7 +10,9 @@ const AppTollbar = () => {
         <Link className="header_links_link">Стать Турмэйтом</Link>
         <Link className="header_links_link">Каз/KZT</Link>
         <Link className="header_links_link">Войти</Link>
-        <Link className="header_links_register">Зарегистрироваться</Link>
+        <Link to="/register" className="header_links_register">
+          Зарегистрироваться
+        </Link>
       </div>
     </div>
   );

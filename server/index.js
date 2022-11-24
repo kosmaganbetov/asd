@@ -15,7 +15,7 @@ app.use("/tourmates", tourmates);
 app.use("/directions",directions)
 app.use("/tours",tours)
 const run = async () => {
-  await mongoose.connect("mongodb://mongo/travella", {useNewUrlParser: true});
+  await mongoose.connect("mongodb://localhost:27017/travella", {useNewUrlParser: true});
   console.log("Connected to mongo DB");
 
   app.listen(PORT, () => {
