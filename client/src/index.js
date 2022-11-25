@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -10,15 +11,43 @@ import tourmatesReducer from "./store/reducers/tourmatesReducer";
 import { Provider } from "react-redux";
 import directionsReducer from "./store/reducers/directionReducer";
 import toursReducer from "./store/reducers/toursReducer";
+import axios from "./axiosTravella";
+import userReducer from "./store/reducers/userReducer";
+const localStorageMiddleware =
+  ({ getState }) =>
+    (next) =>
+      (action) => {
+        const result = next(action);
+        localStorage.setItem("user", JSON.stringify(getState().users.user));
+        return result;
+      };
+
+const loadFromLocalStorage = () => {
+  if (localStorage.getItem("user") !== null) {
+    return { users: { user: JSON.parse(localStorage.getItem("user")) } };
+  }
+  return undefined;
+};
 
 const store = configureStore({
   reducer: {
     tourmates: tourmatesReducer,
     directions: directionsReducer,
     tours: toursReducer,
+    users: userReducer,
   },
+  preloadedState: loadFromLocalStorage(),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(localStorageMiddleware),
 });
-
+axios.interceptors.request.use((config) => {
+  try {
+    config.headers["Authorization"] = store.getState().users.user.token;
+  } catch (e) {
+    // do nothing, no token exists;
+  }
+  return config;
+});
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>

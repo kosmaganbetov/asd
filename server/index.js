@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const tourmates = require("./routes/tourmates");
 const directions = require("./routes/directions")
 const tours = require("./routes/tours")
+const users = require("./routes/users")
 const app = express();
 
 const PORT = 8000;
@@ -14,8 +15,9 @@ app.use(express.json());
 app.use("/tourmates", tourmates);
 app.use("/directions",directions)
 app.use("/tours",tours)
+app.use("/users", users)
 const run = async () => {
-  await mongoose.connect("mongodb://mongo/travella", {useNewUrlParser: true});
+  await mongoose.connect("mongodb://localhost:27017/travella", {useNewUrlParser: true});
   console.log("Connected to mongo DB");
 
   app.listen(PORT, () => {
