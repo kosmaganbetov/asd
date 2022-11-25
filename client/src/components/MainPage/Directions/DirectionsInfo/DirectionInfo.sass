@@ -16,7 +16,13 @@
         padding: 0 40px
 
 .react-multiple-carousel__arrow--right 
-    right: calc(0% + 1px)
+    right: calc(-1% + 1px)
 
 .react-multiple-carousel__arrow--left 
-    left: calc(0% + 6px)
+    left: calc(-1% + 6px)
+
+.react-multiple-carousel__arrow, .react-multiple-carousel__arrow:hover 
+    background: transparent
+
+.react-multiple-carousel__arrow::before 
+    color: #000
