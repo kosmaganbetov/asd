@@ -7,7 +7,9 @@ const AuthForm = (props) => {
     <div className="AuthForm__wrapper">
       <h2 className="AuthForm__title">{props.title}</h2>
       <p className="AuthForm__info">{props.info}</p>
-      <form className="AuthForm">{props.children}</form>
+      <form className="AuthForm" onSubmit={props.onSubmit}>
+        {props.children}
+      </form>
       <p className="AuthForm__redirect">
         {props.redirectText}
         <Link to={props.redirectLinkPath} className="AuthForm__redirect_link">
