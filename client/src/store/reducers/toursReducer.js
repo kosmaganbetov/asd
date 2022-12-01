@@ -2,7 +2,7 @@ import { GET_TOURS_SUCCESS, GET_TOUR_SUCCESS } from "../actionTypes";
 
 const initialState = {
   tours: [],
-  tour: {},
+  tour: [],
 };
 
 const toursReducer = (state = initialState, action) => {
