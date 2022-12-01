@@ -9,7 +9,7 @@ const TourSchema = new Schema({
   tourmateID: {
     type: Schema.Types.ObjectId,
     ref: "Tourmate",
-    required: [true,"Введите ID тура"]
+    required: [true,"Введите ID турмейта"]
   },
   price: {
     type: Number,
@@ -19,7 +19,49 @@ const TourSchema = new Schema({
     type: String,
     maxLength: 255
   },
-  image: String
+  image: String,
+  cityID: {
+    type: Schema.Types.ObjectId,
+    ref: "City",
+    required: [true,"Введите ID города"]
+  },
+  countryID: {
+    type: Schema.Types.ObjectId,
+    ref: "Country",
+    required: [true,"Введите ID страны"]
+  },
+  tourType: {
+    type: Schema.Types.ObjectId,
+    ref: "TourType",
+    required: [true,"Введите ID типа"]
+  },
+  tourTransport: {
+    type: Schema.Types.ObjectId,
+    ref: "TourTransport",
+    required: [true,"Введите ID транспорта"]
+  },
+  plan: {
+    type: [{
+      title: String,
+      description: String
+    }],
+    required: true
+	}, 
+  program: {
+    type: {
+      included: [String],
+      notincluded: [String]
+    },
+    required: true
+  },
+  categories: {
+    type: [Schema.Types.ObjectId],
+    required: true
+  },
+  duration: {
+    type: String,
+    required: true
+  }
 });
 
 const Tour = mongoose.model("Tour", TourSchema);

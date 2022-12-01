@@ -1,7 +1,12 @@
 import mongoose from 'mongoose';
+import Category from './models/Category.js';
+import City from './models/City.js';
+import Country from './models/Country.js';
 import Direction from './models/Direction.js';
 import Tour from './models/Tour.js';
 import Tourmate from './models/Tourmate.js';
+import TourTransport from './models/TourTransport.js';
+import TourType from './models/TourType.js';
 
 mongoose.connect("mongodb://localhost/travella", {useNewUrlParser: true});
 
@@ -72,28 +77,151 @@ db.once('open', async () => {
             description:"Величественная Великобритания",
             image:"england.jpg"
         },
-    )
+    );
+    const [Kazakhstan, USA, England] = await Country.create(
+        {
+            country: "Казахстан"
+        },
+        {
+            country: "США"
+        },
+        {
+            country: "Англия"
+        },
+    );
+    const [Almaty, NY, London] = await City.create(
+        {
+            city: "Алматы"
+        },
+        {
+            city: "Нью-Йорк"
+        },
+        {
+            city: "Лондон"
+        },
+    );
+    const [Private, Group] = await TourType.create(
+        {
+            type: "Частный",
+            icon: "type_icon.jpg"
+        },
+        {
+            type: "Групповой",
+            icon: "type_icon.jpg"
+        }
+    );
+    const [Foote, Car] = await TourTransport.create(
+        {
+            transport: "Пешком",
+            icon: "transport_icon.jpg"
+        },
+        {
+            transport: "На машине",
+            icon: "transport_icon.jpg"
+        }
+    );
+
+    const [Food, Architecture, Stores] = await Category.create(
+        {
+            category: "Еда",
+            icon: "category_icon.jpg"
+        },
+        {
+            category: "Архитектура",
+            icon: "category_icon.jpg"
+        },
+        {
+            category: "Магазины",
+            icon: "category_icon.jpg"
+        }
+    );
     await Tour.create(
         {
             title:"Прелести Мангистау",
             tourmateID: Ilon._id,
             price: 300000,
             description:"Открой для себя жана Казахстан",
-            image:"kz.jpg"
+            image:"kz.jpg",
+            cityID: Almaty._id,
+            countryID: Kazakhstan._id,
+            tourType: Private._id,
+            tourTransport: Car._id,
+            plan: [{
+                title: "Встреча с Турмэйтом",
+                description: "Вы встретитесь с Турмэйтом. Место встречи: Princess street, 12, NY9812"
+            }, 
+            {
+                title: "Coffee Time",
+                description: "Ваш Турмэйт покажет самое классное кофе в Нью Йорке. Попьем классное кофе, и познакомимся поближе."
+            },
+            {
+                title: "Times Square",
+                description: "Сердце Нью-Йорка. Если не были в Times Sqaure, значит вы не были в НЙ."
+            }],
+            program: {
+                included: ["Частный Гид", "Водитель", "Машина"],
+                notincluded: ["Расходы на еду", "Билеты на музей"]
+            },
+            categories: [Food._id, Architecture._id, Stores._id],
+            duration: "1 день"
         },
         {
             title:"Тур по Манхэттен",
             tourmateID: Jeff._id,
             price: 220500,
             description:"Открой для себя жана Казахстан",
-            image:"england.jpg"
+            image:"england.jpg",
+            cityID: NY._id,
+            countryID: USA._id,
+            tourType: Group._id,
+            tourTransport: Foote._id,
+            plan: [{
+                title: "Встреча с Турмэйтом",
+                description: "Вы встретитесь с Турмэйтом. Место встречи: Princess street, 12, NY9812"
+            }, 
+            {
+                title: "Coffee Time",
+                description: "Ваш Турмэйт покажет самое классное кофе в Нью Йорке. Попьем классное кофе, и познакомимся поближе."
+            },
+            {
+                title: "Times Square",
+                description: "Сердце Нью-Йорка. Если не были в Times Sqaure, значит вы не были в НЙ."
+            }],
+            program: {
+                included: ["Частный Гид"],
+                notincluded: ["Расходы на еду", "Билеты на музей"]
+            },
+            categories: [Food._id, Architecture._id, Stores._id],
+            duration: "8 часов"
         },
         {
             title:"Глазго: City Center",
             tourmateID: Bill._id,
             price: 150000,
             description:"Открой для себя жана Казахстан",
-            image:"usa.jpg"
+            image:"usa.jpg",
+            cityID: London._id,
+            countryID: England._id,
+            tourType: Group._id,
+            tourTransport: Car._id,
+            plan: [{
+                title: "Встреча с Турмэйтом",
+                description: "Вы встретитесь с Турмэйтом. Место встречи: Princess street, 12, NY9812"
+            }, 
+            {
+                title: "Coffee Time",
+                description: "Ваш Турмэйт покажет самое классное кофе в Нью Йорке. Попьем классное кофе, и познакомимся поближе."
+            },
+            {
+                title: "Times Square",
+                description: "Сердце Нью-Йорка. Если не были в Times Sqaure, значит вы не были в НЙ."
+            }],
+            program: {
+                included: ["Частный Гид", "Водитель", "Машина"],
+                notincluded: ["Расходы на еду", "Билеты на музей"]
+            },
+            categories: [Food._id, Architecture._id, Stores._id],
+            duration: "5 часов"
         },
     )
 
