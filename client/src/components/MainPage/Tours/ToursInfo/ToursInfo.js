@@ -52,6 +52,7 @@ const ToursInfo = ({ tours }) => {
             return (
               <ToursInfoCard
                 key={tours[tour]._id}
+                id={tours[tour]._id}
                 title={tours[tour].title}
                 image={tours[tour].image}
                 tourmateImage={tours[tour].tourmateID?.image}

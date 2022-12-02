@@ -1,10 +1,15 @@
 import React from "react";
 import { uploadsUrl } from "../../../../constants";
 import "./ToursInfoCard.sass";
+import { useNavigate } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
-const ToursInfoCard = ({ title, image, tourmateImage, torumateName }) => {
+const ToursInfoCard = ({ title, image, tourmateImage, torumateName, id }) => {
+  const navigate = useNavigate();
+  const redirectToTourmate = () => {
+    navigate(`/tours/${id}`);
+  };
   return (
-    <div className="ToursInfoCard">
+    <div className="ToursInfoCard" onClick={redirectToTourmate}>
       <div className="ToursInfoCard_bgimg">
         <img src={`${uploadsUrl}/${image}`} />
       </div>
