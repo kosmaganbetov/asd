@@ -1,6 +1,9 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import "./AppToolbar.sass";
-const AppTollbar = () => {
+import AnonymousMenu from "./Menus/AnonymousMenu/Anonymous";
+import UserMenu from "./Menus/UserMenu/UserMenu";
+const AppTollbar = (props) => {
   return (
     <div className="header">
       <div className="header_title">
@@ -9,12 +12,7 @@ const AppTollbar = () => {
       <div className="header_links">
         <Link className="header_links_link">Стать Турмэйтом</Link>
         <Link className="header_links_link">Каз/KZT</Link>
-        <Link to="/login" className="header_links_link">
-          Войти
-        </Link>
-        <Link to="/register" className="header_links_register">
-          Зарегистрироваться
-        </Link>
+        {props.user ? <UserMenu user={props.user} /> : <AnonymousMenu />}
       </div>
     </div>
   );
