@@ -5,6 +5,7 @@ import MainPage from "./container/MainPage/MainPage";
 import Register from "./container/Register/Register";
 import RegisterEmail from "./container/RegisterEmail/RegisterEmail";
 import Login from "./container/Login/Login";
+import MapBlock from "./components/Map/Map";
 // import data from "./MockUps/TourmateData.json";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/register/email" element={<RegisterEmail />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/map" element={<MapBlock />} />
       </Route>
     </Routes>
   );
