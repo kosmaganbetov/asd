@@ -16,8 +16,8 @@ const Tour = () => {
   const dispatch = useDispatch();
   const tour = useSelector((state) => state.tours.tour);
   const defaultState = {
-    center: [55.751574, 37.573856],
-    zoom: 5,
+    center: [55.684758, 37.738521],
+    zoom: 13,
   };
   useEffect(() => {
     dispatch(fetchTour(params.id));
