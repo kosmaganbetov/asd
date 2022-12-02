@@ -27,11 +27,11 @@ const Login = () => {
       <Container>
         <AuthForm
           onSubmit={submitHandler}
-          title="Зарегистрироваться"
+          title="Войти"
           info="Войдите, чтобы добавлять туры в избранное и просматривать заказы с любого устройства."
-          redirectText="Уже есть аккаунт?  "
-          redirectLink="Войти"
-          redirectLinkPath="/login"
+          redirectText="Еще нет аккаунта?  "
+          redirectLink="Зарегистрироваться"
+          redirectLinkPath="/register"
         >
           <FormInput
             placeholder="Email"
@@ -50,10 +50,6 @@ const Login = () => {
             }
           />
           <AuthButton type="submit">Войти</AuthButton>
-          <p className="Register__conf_policy">
-            Создавая аккаунт, вы принимаете «Публичную оферту» и «Политику
-            конфиденциальности».
-          </p>
           <hr className="Register__space" />
         </AuthForm>
       </Container>

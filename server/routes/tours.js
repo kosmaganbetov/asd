@@ -20,7 +20,7 @@ const upload = multer({ storage });
 router.get("/:id", async (req, res) => {
     try {
       const tours = await Tour.findById(req.params.id)
-        .populate("tourmate");
+.populate("tourmateID");
       res.send(tours);
     } catch (e) {
       res.sendStatus(404);
