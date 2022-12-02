@@ -16,8 +16,7 @@ const Tour = () => {
   const tour = useSelector((state) => state.tours.tour);
   useEffect(() => {
     dispatch(fetchTour(params.id));
-    console.log(tour._id);
-  });
+  }, []);
 
   return (
     <div className="tour">
