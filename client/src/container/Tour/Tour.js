@@ -11,6 +11,7 @@ import Gallery5 from "../../assets/images/photo5.jpg";
 import Share from "../../assets/images/share.png";
 import "./Tour.sass";
 import MapBlock from "../../components/Map/Map";
+
 const Tour = () => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const Tour = () => {
     center: [55.684758, 37.738521],
     zoom: 13,
   };
+  console.log(tour);
   useEffect(() => {
     dispatch(fetchTour(params.id));
   }, []);
@@ -107,6 +109,29 @@ const Tour = () => {
               {"Москва, ул. Любинская 61"}
             </p>
             <MapBlock defaultState={defaultState} />
+          </div>
+          <div className="tour_good_to_know">
+            <h3>Good to know</h3>
+            <div className="tour_good_to_know_subtitle">
+              <span>Что входит в тур</span>
+              {tour?.program?.included.map((item) => {
+                return (
+                  <div className="tour_good_to_know_yes" key={item}>
+                    {item}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="tour_good_to_know_subtitle">
+              <span>Что не входит в тур</span>
+              {tour?.program?.notincluded.map((item) => {
+                return (
+                  <div className="tour_good_to_know_no" key={item}>
+                    {item}
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>
