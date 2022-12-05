@@ -7,7 +7,9 @@ const AppTollbar = (props) => {
   return (
     <div className="header">
       <div className="header_title">
-        <h1>Travella</h1>
+        <Link className="header_title" to="/">
+          Travella
+        </Link>
       </div>
       <div className="header_links">
         <Link className="header_links_link">Стать Турмэйтом</Link>
