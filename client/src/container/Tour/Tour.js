@@ -102,6 +102,15 @@ const Tour = () => {
               работаю в других странах.
             </p>
           </div>
+          <div className="tour_tourmate_offer">
+            <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+            <p>
+              {tour?.tourmateID?.name} {tour?.tourmateID?.surname} может
+              персонализировать ваш тур <br /> Дайте нам знать ваши предпочтения
+              для <br /> персонализированного тура!
+            </p>
+            <button>Запросить индивидуальное предложение</button>
+          </div>
           <div className="Tour__map">
             <h3 className="Tour__map_title">Где встретимся?</h3>
             <p className="Tour__map_location">
@@ -131,6 +140,28 @@ const Tour = () => {
                   </div>
                 );
               })}
+            </div>
+            <div className="tour_contact_tourmate">
+              <div className="tour_contact_tourmate_image">
+                <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+              </div>
+              <div className="tour_contact_tourmate_text">
+                <p>Все еще остались вопросы?Напиши мне</p>
+                <button>Связаться с турмэйтом</button>
+              </div>
+            </div>
+            <div className="tour_contact_checkout">
+              <div className="tour_contact_checkout_image">
+                <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+              </div>
+              <div className="tour_contact_checkout_text">
+                <p>
+                  Также, у {tour?.tourmateID?.name} вы можете заказать себе
+                  дополнительные <br /> услуги, такие как: Ночлег, фотосессия,
+                  Планирование поездки
+                </p>
+                <button>Go to checkout</button>
+              </div>
             </div>
           </div>
         </div>
