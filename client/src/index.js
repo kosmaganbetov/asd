@@ -13,6 +13,8 @@ import directionsReducer from "./store/reducers/directionReducer";
 import toursReducer from "./store/reducers/toursReducer";
 import axios from "./axiosTravella";
 import userReducer from "./store/reducers/userReducer";
+import citiesReducer from "./store/reducers/citiesRedusers";
+
 const localStorageMiddleware =
   ({ getState }) =>
     (next) =>
@@ -35,6 +37,7 @@ const store = configureStore({
     directions: directionsReducer,
     tours: toursReducer,
     users: userReducer,
+    cities: citiesReducer,
   },
   preloadedState: loadFromLocalStorage(),
   middleware: (getDefaultMiddleware) =>

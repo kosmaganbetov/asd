@@ -32,7 +32,7 @@ router.get("/", async (req, res) => {
     if(req.query.tourmate){
       query = {tourmate:req.query.torumate}
     }
-    const tours = await Tour.find(query).populate("tourmateID").sort({year:1});
+    const tours = await Tour.find(query).populate("tourmateID cityID").sort({year:1});
     res.send(tours);
   });
 
