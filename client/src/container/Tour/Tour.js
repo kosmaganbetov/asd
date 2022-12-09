@@ -12,6 +12,7 @@ import Share from "../../assets/images/share.png";
 import "./Tour.sass";
 import MapBlock from "../../components/Map/Map";
 import Plan from "../../components/Tour/Plan/Plan";
+
 const Tour = () => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const Tour = () => {
     center: [55.684758, 37.738521],
     zoom: 13,
   };
+  console.log(tour);
   useEffect(() => {
     dispatch(fetchTour(params.id));
   }, []);
@@ -101,7 +103,17 @@ const Tour = () => {
               работаю в других странах.
             </p>
           </div>
+
           <Plan plan={tour.plan} />
+          <div className="tour_tourmate_offer">
+            <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+            <p>
+              {tour?.tourmateID?.name} {tour?.tourmateID?.surname} может
+              персонализировать ваш тур <br /> Дайте нам знать ваши предпочтения
+              для <br /> персонализированного тура!
+            </p>
+            <button>Запросить индивидуальное предложение</button>
+          </div>
           <div className="Tour__map">
             <h3 className="Tour__map_title">Где встретимся?</h3>
             <p className="Tour__map_location">
@@ -109,6 +121,51 @@ const Tour = () => {
               {"Москва, ул. Любинская 61"}
             </p>
             <MapBlock defaultState={defaultState} />
+          </div>
+          <div className="tour_good_to_know">
+            <h3>Good to know</h3>
+            <div className="tour_good_to_know_subtitle">
+              <span>Что входит в тур</span>
+              {tour?.program?.included.map((item) => {
+                return (
+                  <div className="tour_good_to_know_yes" key={item}>
+                    {item}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="tour_good_to_know_subtitle">
+              <span>Что не входит в тур</span>
+              {tour?.program?.notincluded.map((item) => {
+                return (
+                  <div className="tour_good_to_know_no" key={item}>
+                    {item}
+                  </div>
+                );
+              })}
+            </div>
+            <div className="tour_contact_tourmate">
+              <div className="tour_contact_tourmate_image">
+                <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+              </div>
+              <div className="tour_contact_tourmate_text">
+                <p>Все еще остались вопросы?Напиши мне</p>
+                <button>Связаться с турмэйтом</button>
+              </div>
+            </div>
+            <div className="tour_contact_checkout">
+              <div className="tour_contact_checkout_image">
+                <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+              </div>
+              <div className="tour_contact_checkout_text">
+                <p>
+                  Также, у {tour?.tourmateID?.name} вы можете заказать себе
+                  дополнительные <br /> услуги, такие как: Ночлег, фотосессия,
+                  Планирование поездки
+                </p>
+                <button>Go to checkout</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
