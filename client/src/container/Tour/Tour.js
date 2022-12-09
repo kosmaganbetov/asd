@@ -12,6 +12,7 @@ import Share from "../../assets/images/share.png";
 import New_York from "../../assets/images/New_York_City.jpg";
 import "./Tour.sass";
 import MapBlock from "../../components/Map/Map";
+import Plan from "../../components/Tour/Plan/Plan";
 
 const Tour = () => {
   const params = useParams();
@@ -29,7 +30,7 @@ const Tour = () => {
   return (
     <div className="tour">
       <div className="tour_container">
-        <div className="">
+        <div className="column">
           <div className="tour_card">
             <div className="tour_card_container">
               <div className="tour_card_price">
@@ -64,7 +65,7 @@ const Tour = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="column">
           <div className="tour_tourmate">
             <div className="tour_tourmate_text">
               <h2>
@@ -103,6 +104,17 @@ const Tour = () => {
               работаю в других странах.
             </p>
           </div>
+
+          <Plan plan={tour.plan} />
+          <div className="tour_tourmate_offer">
+            <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+            <p>
+              {tour?.tourmateID?.name} {tour?.tourmateID?.surname} может
+              персонализировать ваш тур <br /> Дайте нам знать ваши предпочтения
+              для <br /> персонализированного тура!
+            </p>
+            <button>Запросить индивидуальное предложение</button>
+          </div>
           <div className="Tour__map">
             <h3 className="Tour__map_title">Где встретимся?</h3>
             <p className="Tour__map_location">
@@ -132,6 +144,28 @@ const Tour = () => {
                   </div>
                 );
               })}
+            </div>
+            <div className="tour_contact_tourmate">
+              <div className="tour_contact_tourmate_image">
+                <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+              </div>
+              <div className="tour_contact_tourmate_text">
+                <p>Все еще остались вопросы?Напиши мне</p>
+                <button>Связаться с турмэйтом</button>
+              </div>
+            </div>
+            <div className="tour_contact_checkout">
+              <div className="tour_contact_checkout_image">
+                <img src={`${uploadsUrl}/${tour?.tourmateID?.image}`} />
+              </div>
+              <div className="tour_contact_checkout_text">
+                <p>
+                  Также, у {tour?.tourmateID?.name} вы можете заказать себе
+                  дополнительные <br /> услуги, такие как: Ночлег, фотосессия,
+                  Планирование поездки
+                </p>
+                <button>Go to checkout</button>
+              </div>
             </div>
           </div>
           <div className="info_tours_main">

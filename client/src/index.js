@@ -12,7 +12,10 @@ import { Provider } from "react-redux";
 import directionsReducer from "./store/reducers/directionReducer";
 import toursReducer from "./store/reducers/toursReducer";
 import axios from "./axiosTravella";
+import {GoogleOAuthProvider} from "@react-oauth/google";
 import userReducer from "./store/reducers/userReducer";
+import citiesReducer from "./store/reducers/citiesRedusers";
+
 const localStorageMiddleware =
   ({ getState }) =>
     (next) =>
@@ -35,6 +38,7 @@ const store = configureStore({
     directions: directionsReducer,
     tours: toursReducer,
     users: userReducer,
+    cities: citiesReducer,
   },
   preloadedState: loadFromLocalStorage(),
   middleware: (getDefaultMiddleware) =>
@@ -52,10 +56,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <GoogleOAuthProvider clientId="155471486942-s238kmj3pci1ttkuj1er20isi4d90g5e.apps.googleusercontent.com">
+        <App />
+      </GoogleOAuthProvider>
+     
     </BrowserRouter>
   </Provider>
 );
+
+
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
