@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import AuthButton from "../../components/Authentication/AuthButton/AuthButton";
 import AuthForm from "../../components/Authentication/AuthForm/AuthForm";
 import Container from "../../components/UI/Container/Container";
+import AuthButtonGoogle from "../../components/Authentication/AuthButtonGoogle/AuthButtonGoogle";
 import "./Register.sass";
 const Register = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const Register = () => {
           redirectLink="Войти"
           redirectLinkPath="/login"
         >
+          <AuthButtonGoogle />
           <AuthButton
             onClick={() => {
               navigate("/register/email");
