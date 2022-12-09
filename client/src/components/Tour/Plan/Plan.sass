@@ -1,0 +1,73 @@
+.TourPlan__title
+    color: rgb(66, 66, 66)
+    font-family: Merriweather
+    font-size: 20px
+    font-weight: 700
+    min-height: 24px
+.TourPlan__checkpoint
+    margin-top: 5px
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    background-color: rgb(102, 102, 102)
+    margin-right: 50px
+    position: relative
+    &::before
+        position: absolute
+        content: ""
+        top: 50%
+        left: calc( 50% - 1px )
+        width: 2px
+        height: 80px
+        background-color: rgb(102, 102, 102)
+        
+.TourPlan__checkpoint_first
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    margin-right: 50px
+    position: relative
+    &::before
+        position: absolute
+        content: ""
+        top: 50%
+        left: calc( 50% - 1px )
+        width: 2px
+        height: 80px
+        background-color: rgb(102, 102, 102)
+    &::after
+        background-size: contain
+        background-image: url("../../../assets/icons/location.png")
+        position: absolute
+        content: ""
+        top: -5px
+        left: -3px
+        width: 20px
+        height: 20px
+        
+.TourPlan__checkpoint_last
+    width: 15px
+    height: 15px
+    border-radius: 50%
+    background-color: rgb(102, 102, 102)
+    margin-right: 50px
+    position: relative
+.TourPlan__block
+    display: flex
+    height: 80px
+    &_title
+        color: rgb(66, 66, 66)
+        font-family: Merriweather
+        font-size: 18px
+        font-weight: 400
+        min-height: 19px
+        text-align: left
+    &_description
+        color: rgb(66, 66, 66)
+        font-family: Merriweather
+        font-weight: 300
+        font-size: 16px
+        min-height: 17px
+        text-align: left
+
+

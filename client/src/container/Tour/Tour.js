@@ -11,6 +11,7 @@ import Gallery5 from "../../assets/images/photo5.jpg";
 import Share from "../../assets/images/share.png";
 import "./Tour.sass";
 import MapBlock from "../../components/Map/Map";
+import Plan from "../../components/Tour/Plan/Plan";
 const Tour = () => {
   const params = useParams();
   const dispatch = useDispatch();
@@ -26,7 +27,7 @@ const Tour = () => {
   return (
     <div className="tour">
       <div className="tour_container">
-        <div className="">
+        <div className="column">
           <div className="tour_card">
             <div className="tour_card_container">
               <div className="tour_card_price">
@@ -61,7 +62,7 @@ const Tour = () => {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="column">
           <div className="tour_tourmate">
             <div className="tour_tourmate_text">
               <h2>
@@ -100,6 +101,7 @@ const Tour = () => {
               работаю в других странах.
             </p>
           </div>
+          <Plan plan={tour.plan} />
           <div className="Tour__map">
             <h3 className="Tour__map_title">Где встретимся?</h3>
             <p className="Tour__map_location">
