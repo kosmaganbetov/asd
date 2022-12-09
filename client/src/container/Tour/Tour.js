@@ -136,7 +136,7 @@ const Tour = () => {
           </div>
           <div className="info_tours_main">
             <div className="Tours__footer">
-              <h3 className="Tours__footer_title">Скачайте приложение</h3>
+              <p className="Tours__footer_title">Скачайте приложение</p>
             </div>
 
             <div className="Tours__info_div">
