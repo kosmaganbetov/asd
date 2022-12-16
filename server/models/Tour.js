@@ -61,7 +61,14 @@ const TourSchema = new Schema({
   duration: {
     type: String,
     required: true
-  }
+  },
+  moreservices: {
+    type: [{
+      title: String,
+      price: Number
+    }],
+    required: false
+	}, 
 });
 
 const Tour = mongoose.model("Tour", TourSchema);

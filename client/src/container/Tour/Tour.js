@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { uploadsUrl } from "../../constants";
 import { fetchTour } from "../../store/actions/toursActions";
 import Gallery1 from "../../assets/images/photo1.jpg";
@@ -16,6 +16,7 @@ import Plan from "../../components/Tour/Plan/Plan";
 
 const Tour = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const tour = useSelector((state) => state.tours.tour);
   const defaultState = {
@@ -53,7 +54,10 @@ const Tour = () => {
                 </div>
               </div>
               <div className="tourmate_card_buttons">
-                <button className="tourmate_card_buttons_contact">
+                <button
+                  onClick={() => navigate(`/reservetour/${params.id}`)}
+                  className="tourmate_card_buttons_contact"
+                >
                   Забронировать
                 </button>
               </div>
