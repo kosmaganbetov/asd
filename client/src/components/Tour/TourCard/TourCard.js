@@ -3,7 +3,7 @@ import "./TourCard.sass";
 import Share from "../../../assets/images/share.png";
 
 // eslint-disable-next-line react/prop-types
-const TourCard = ({ price, image, name, surname, description }) => {
+const TourCard = ({ price, image, name, surname, description, navigate }) => {
   return (
     <div className="tour_card">
       <div className="tour_card_container">
@@ -27,7 +27,12 @@ const TourCard = ({ price, image, name, surname, description }) => {
           </div>
         </div>
         <div className="tourmate_card_buttons">
-          <button className="tourmate_card_buttons_contact">
+          <button
+            className="tourmate_card_buttons_contact"
+            onClick={() => {
+              navigate("/reservation");
+            }}
+          >
             Забронировать
           </button>
         </div>

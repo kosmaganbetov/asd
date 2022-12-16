@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { fetchTour } from "../../store/actions/toursActions";
 import "./Tour.sass";
 import Plan from "../../components/Tour/Plan/Plan";
@@ -24,7 +24,7 @@ const Tour = () => {
   useEffect(() => {
     dispatch(fetchTour(params.id));
   }, []);
-
+  const navigate = useNavigate();
   return (
     <div className="tour">
       <div className="tour_container">
@@ -35,6 +35,7 @@ const Tour = () => {
             name={tour?.tourmateID?.name}
             surname={tour?.tourmateID?.surname}
             description={tour?.tourmateID?.description}
+            navigate={navigate}
           />
         </div>
         <div className="column">
