@@ -14,6 +14,7 @@ import TourTourmateCard from "../../components/Tour/TourTourmateCard/TourTourmat
 
 const Tour = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const tour = useSelector((state) => state.tours.tour);
   const defaultState = {
@@ -24,7 +25,6 @@ const Tour = () => {
   useEffect(() => {
     dispatch(fetchTour(params.id));
   }, []);
-  const navigate = useNavigate();
   return (
     <div className="tour">
       <div className="tour_container">

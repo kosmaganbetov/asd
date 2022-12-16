@@ -9,6 +9,7 @@ import Login from "./container/Login/Login";
 import MapBlock from "./components/Map/Map";
 import Tour from "./container/Tour/Tour";
 import { useSelector } from "react-redux";
+import ReserveTour from "./container/ReserveTour/ReserveTour";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import ReservationAuth from "./container/ReservationAuth/ReservationAuth";
 
@@ -34,11 +35,12 @@ function App() {
         <Route path="/register/email" element={<RegisterEmail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/map" element={<MapBlock />} />
+        <Route path="/reservetour/:id" element={<ReserveTour />} />
         <Route
           path="/reservation"
           element={
             <ProtectedRoute
-              redirectUrl={"/"}
+              redirectUrl={"/reservetour/:id"}
               user={user}
               Navigate={Navigate}
               outlet={<Outlet />}
