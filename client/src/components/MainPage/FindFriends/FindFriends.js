@@ -17,10 +17,10 @@ const FindFriends = ({ cities }) => {
             })}
           </select>
           <input type="date" />
-          <select>
+          <select className="FindFriends_qty">
             <option>1 взрослый</option>
           </select>
-          <button>&#128269; Поиск</button>
+          <button> Поиск</button>
         </form>
         <span>Ранее просмотренные</span>
       </div>
