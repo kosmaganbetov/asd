@@ -40,7 +40,7 @@ function App() {
           path="/reservation"
           element={
             <ProtectedRoute
-              redirectUrl={"/"}
+              redirectUrl={"/reservetour/:id"}
               user={user}
               Navigate={Navigate}
               outlet={<Outlet />}

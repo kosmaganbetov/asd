@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./TourTourmateOffer.sass";
 import { uploadsUrl } from "../../../constants";
 
