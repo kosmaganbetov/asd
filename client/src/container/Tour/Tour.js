@@ -212,7 +212,7 @@ const Tour = () => {
               <div className="Footer__Button_Text">
                 <p>Нью - Йорк</p>
               </div>
-              <button className="Footer__Button">
+              <button className="Footer__Buttons">
                 <a className="Footer__Link" href="#">
                   Посмотреть другие туры в этом городе
                 </a>
