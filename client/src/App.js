@@ -10,19 +10,11 @@ import MapBlock from "./components/Map/Map";
 import Tour from "./container/Tour/Tour";
 import { useSelector } from "react-redux";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-import Reservation from "./container/Reservation/Reservation";
-// import data from "./MockUps/TourmateData.json";
+import ReservationAuth from "./container/ReservationAuth/ReservationAuth";
 
 function App() {
   const user = useSelector((state) => state.users.user);
-  // const tourmate = data;
-  // const ProtectedRoute = ({ redirectUrl, children }) => {
-  //   const user = useSelector((state) => state.users?.user);
-  //   if (!user) {
-  //     return <Navigate to={redirectUrl} />;
-  //   }
-  //   return children || <Outlet />;
-  // };
+
   return (
     <Routes>
       <Route
@@ -51,7 +43,7 @@ function App() {
               Navigate={Navigate}
               outlet={<Outlet />}
             >
-              <Reservation />
+              <ReservationAuth />
             </ProtectedRoute>
           }
         />
