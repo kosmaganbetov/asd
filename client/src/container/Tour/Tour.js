@@ -35,7 +35,7 @@ const Tour = () => {
             name={tour?.tourmateID?.name}
             surname={tour?.tourmateID?.surname}
             description={tour?.tourmateID?.description}
-            navigate={navigate}
+            navigate={() => navigate(`/reservation/${params.id}`)}
           />
         </div>
         <div className="column">

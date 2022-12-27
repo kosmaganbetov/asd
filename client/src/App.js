@@ -37,7 +37,7 @@ function App() {
         <Route path="/map" element={<MapBlock />} />
         <Route path="/reservetour/:id" element={<ReserveTour />} />
         <Route
-          path="/reservation"
+          path="/reservation/:id"
           element={
             <ProtectedRoute
               redirectUrl={"/reservetour/:id"}

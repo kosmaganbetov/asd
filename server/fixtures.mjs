@@ -7,11 +7,12 @@ import Tour from './models/Tour.js';
 import Tourmate from './models/Tourmate.js';
 import TourTransport from './models/TourTransport.js';
 import TourType from './models/TourType.js';
-
-mongoose.connect("mongodb://localhost/travella", {useNewUrlParser: true});
-
+import * as dotenv from "dotenv"
+dotenv.config();
+await mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true});
+console.log(process.env.DB_CONNECT);
 const db = mongoose.connection;
-
+console.log(db);
 db.once('open', async () => {
 
     try {

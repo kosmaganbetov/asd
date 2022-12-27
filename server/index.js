@@ -7,8 +7,9 @@ const tours = require("./routes/tours")
 const users = require("./routes/users")
 const cities = require("./routes/cities")
 const app = express();
-
-const PORT = 8000;
+const dotenv = require("dotenv");
+dotenv.config()
+const PORT = process.env.APP_PORT || 8000;
 
 app.use(cors());
 app.use(express.static("public"));
@@ -19,7 +20,7 @@ app.use("/tours",tours)
 app.use("/users", users)
 app.use("/cities", cities)
 const run = async () => {
-  await mongoose.connect("mongodb://localhost:27017/travella", {useNewUrlParser: true});
+  await mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true});
   console.log("Connected to mongo DB");
 
   app.listen(PORT, () => {

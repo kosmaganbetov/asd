@@ -63,7 +63,7 @@ const ReservedTourCard = (props) => {
                 </div>
               );
             })}
-            <div className="ReservedTourCard__tour_price">
+            <div className="ReservedTourCard__tour_price _summ">
               <div className="ReservedTourCard__tour_price_title">
                 Итого к оплате
               </div>
