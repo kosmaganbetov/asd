@@ -22,10 +22,6 @@ const FindFriends = ({ cities }) => {
               },
             ]}
           />
-          {/* <option>Куда едете?</option>
-            {cities.map((city) => {
-              return <option key={city._id}>{city.city}</option>;
-            })} */}
           <DatePicker size="large" />
           <Select
             defaultValue="Куда едете?"
@@ -38,9 +34,6 @@ const FindFriends = ({ cities }) => {
               },
             ]}
           />
-          {/* <select className="FindFriends_qty">
-            <option>1 взрослый</option>
-          </select> */}
           <button> Поиск</button>
         </form>
         <span>Ранее просмотренные</span>

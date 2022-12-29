@@ -12,47 +12,44 @@ import { useSelector } from "react-redux";
 import ReserveTour from "./container/ReserveTour/ReserveTour";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import ReservationAuth from "./container/ReservationAuth/ReservationAuth";
-import { ChakraProvider } from "@chakra-ui/react";
 function App() {
   const user = useSelector((state) => state.users.user);
 
   return (
-    <ChakraProvider>
-      <Routes>
+    <Routes>
+      <Route
+        element={
+          <>
+            <AppToolbar user={user} />
+            <main>
+              <Outlet />
+            </main>
+          </>
+        }
+      >
+        <Route path="/" element={<MainPage />} />
+        <Route path={"/:id"} element={<Tourmate />} />
+        <Route path="/tours/:id" element={<Tour />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/register/email" element={<RegisterEmail />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/map" element={<MapBlock />} />
+        <Route path="/reservetour/:id" element={<ReserveTour />} />
         <Route
+          path="/reservation/:id"
           element={
-            <>
-              <AppToolbar user={user} />
-              <main>
-                <Outlet />
-              </main>
-            </>
+            <ProtectedRoute
+              redirectUrl={"/reservetour/:id"}
+              user={user}
+              Navigate={Navigate}
+              outlet={<Outlet />}
+            >
+              <ReservationAuth />
+            </ProtectedRoute>
           }
-        >
-          <Route path="/" element={<MainPage />} />
-          <Route path={"/:id"} element={<Tourmate />} />
-          <Route path="/tours/:id" element={<Tour />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/register/email" element={<RegisterEmail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/map" element={<MapBlock />} />
-          <Route path="/reservetour/:id" element={<ReserveTour />} />
-          <Route
-            path="/reservation/:id"
-            element={
-              <ProtectedRoute
-                redirectUrl={"/reservetour/:id"}
-                user={user}
-                Navigate={Navigate}
-                outlet={<Outlet />}
-              >
-                <ReservationAuth />
-              </ProtectedRoute>
-            }
-          />
-        </Route>
-      </Routes>
-    </ChakraProvider>
+        />
+      </Route>
+    </Routes>
   );
 }
 
