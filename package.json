@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://gitlab.com/onggar.aigerim/ajs89_esdp_team_4/issues"
   },
-  "homepage": "https://gitlab.com/onggar.aigerim/ajs89_esdp_team_4#readme"
+  "homepage": "https://gitlab.com/onggar.aigerim/ajs89_esdp_team_4#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3"
+  }
 }

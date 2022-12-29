@@ -7,11 +7,12 @@ import Tour from './models/Tour.js';
 import Tourmate from './models/Tourmate.js';
 import TourTransport from './models/TourTransport.js';
 import TourType from './models/TourType.js';
-
-mongoose.connect("mongodb://localhost/travella", {useNewUrlParser: true});
-
+import * as dotenv from "dotenv"
+dotenv.config();
+await mongoose.connect(process.env.DB_CONNECT, {useNewUrlParser: true});
+console.log(process.env.DB_CONNECT);
 const db = mongoose.connection;
-
+console.log(db);
 db.once('open', async () => {
 
     try {
@@ -158,6 +159,23 @@ db.once('open', async () => {
                 title: "Times Square",
                 description: "Сердце Нью-Йорка. Если не были в Times Sqaure, значит вы не были в НЙ."
             }],
+            moreservices: [{
+                title: "Ночлег",
+                price: 20
+            }, 
+            {
+                title: "Фотосессия",
+                price: 20
+            }, 
+            {
+                title: "Портер",
+                price: 30
+            }, 
+            {
+                title: "Планирование поездки",
+                price: 10
+            }, 
+            ],
             program: {
                 included: ["Частный Гид", "Водитель", "Машина"],
                 notincluded: ["Расходы на еду", "Билеты на музей"]
@@ -191,6 +209,23 @@ db.once('open', async () => {
                 included: ["Частный Гид"],
                 notincluded: ["Расходы на еду", "Билеты на музей"]
             },
+            moreservices: [{
+                title: "Ночлег",
+                price: 20
+            }, 
+            {
+                title: "Фотосессия",
+                price: 20
+            }, 
+            {
+                title: "Портер",
+                price: 30
+            }, 
+            {
+                title: "Планирование поездки",
+                price: 10
+            }, 
+            ],
             categories: [Food._id, Architecture._id, Stores._id],
             duration: "8 часов"
         },
@@ -220,6 +255,23 @@ db.once('open', async () => {
                 included: ["Частный Гид", "Водитель", "Машина"],
                 notincluded: ["Расходы на еду", "Билеты на музей"]
             },
+            moreservices: [{
+                title: "Ночлег",
+                price: 20
+            }, 
+            {
+                title: "Фотосессия",
+                price: 20
+            }, 
+            {
+                title: "Портер",
+                price: 30
+            }, 
+            {
+                title: "Планирование поездки",
+                price: 10
+            }, 
+            ],
             categories: [Food._id, Architecture._id, Stores._id],
             duration: "5 часов"
         },

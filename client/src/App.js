@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import Tourmate from "./container/Tourmate/Tourmate";
-import { Outlet, Route, Routes } from "react-router-dom";
+import { Navigate, Outlet, Route, Routes } from "react-router-dom";
 import AppToolbar from "./components/UI/AppToolbar/AppToolbar";
 import MainPage from "./container/MainPage/MainPage";
 import Register from "./container/Register/Register";
@@ -8,12 +9,13 @@ import Login from "./container/Login/Login";
 import MapBlock from "./components/Map/Map";
 import Tour from "./container/Tour/Tour";
 import { useSelector } from "react-redux";
-
-// import data from "./MockUps/TourmateData.json";
+import ReserveTour from "./container/ReserveTour/ReserveTour";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import ReservationAuth from "./container/ReservationAuth/ReservationAuth";
 
 function App() {
   const user = useSelector((state) => state.users.user);
-  // const tourmate = data;
+
   return (
     <Routes>
       <Route
@@ -33,6 +35,20 @@ function App() {
         <Route path="/register/email" element={<RegisterEmail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/map" element={<MapBlock />} />
+        <Route path="/reservetour/:id" element={<ReserveTour />} />
+        <Route
+          path="/reservation/:id"
+          element={
+            <ProtectedRoute
+              redirectUrl={"/reservetour/:id"}
+              user={user}
+              Navigate={Navigate}
+              outlet={<Outlet />}
+            >
+              <ReservationAuth />
+            </ProtectedRoute>
+          }
+        />
       </Route>
     </Routes>
   );

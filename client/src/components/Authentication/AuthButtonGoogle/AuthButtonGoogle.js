@@ -1,22 +1,35 @@
 import React from "react";
 import "./AuthButtonGoogle.sass";
-import jwt_decode from "jwt-decode";
-import { GoogleLogin } from "@react-oauth/google";
+import { useGoogleLogin } from "@react-oauth/google";
+import Photo from "../../../assets/images/GoogleIcon.png";
+import axios from "axios";
 
 const AuthButtonGoogle = () => {
+  const login = useGoogleLogin({
+    onSuccess: async (respose) => {
+      try {
+        const res = await axios.get(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${respose.access_token}`,
+            },
+          }
+        );
+
+        console.log(res.data);
+      } catch (err) {
+        console.log(err);
+      }
+    },
+  });
   return (
-    <div className="Google_button">
-      <GoogleLogin
-        onSuccess={(credentialResponse) => {
-          console.log(credentialResponse.credential);
-          var decoded = jwt_decode(credentialResponse.credential);
-          console.log(decoded);
-        }}
-        onError={() => {
-          console.log("Login Failed");
-        }}
-      />
-    </div>
+    <>
+      <button className="App-header" onClick={login}>
+        <img className="Goolge_Img" src={Photo} />
+        <p>Continue with google</p>
+      </button>
+    </>
   );
 };
 
