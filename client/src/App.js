@@ -12,7 +12,6 @@ import { useSelector } from "react-redux";
 import ReserveTour from "./container/ReserveTour/ReserveTour";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import ReservationAuth from "./container/ReservationAuth/ReservationAuth";
-
 function App() {
   const user = useSelector((state) => state.users.user);
 

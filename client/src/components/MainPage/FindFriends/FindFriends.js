@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
+import { DatePicker, Select } from "antd";
 import "./FindFriends.sass";
-
 // eslint-disable-next-line react/prop-types
 const FindFriends = ({ cities }) => {
   console.log(cities);
@@ -10,16 +10,30 @@ const FindFriends = ({ cities }) => {
       <p>Бронируй тур, найди себе друга и познавай мир</p>
       <div className={"FindFriends_find_block"}>
         <form>
-          <select className="FindFriends_where">
-            <option>Куда едете?</option>
-            {cities.map((city) => {
-              return <option key={city._id}>{city.city}</option>;
-            })}
-          </select>
-          <input type="date" />
-          <select className="FindFriends_qty">
-            <option>1 взрослый</option>
-          </select>
+          {/* <select className="FindFriends_where"> */}
+          <Select
+            defaultValue="Куда едете?"
+            className="FindFriends_where"
+            size="large"
+            options={[
+              {
+                value: "New-York",
+                label: "New-York",
+              },
+            ]}
+          />
+          <DatePicker size="large" />
+          <Select
+            defaultValue="Куда едете?"
+            className="FindFriends_qty"
+            size="large"
+            options={[
+              {
+                value: "New-York",
+                label: "New-York",
+              },
+            ]}
+          />
           <button> Поиск</button>
         </form>
         <span>Ранее просмотренные</span>
