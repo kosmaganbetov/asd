@@ -66,7 +66,14 @@ const RegisterEmail = () => {
               setRegisterState({ ...registerState, password: e.target.value })
             }
           />
-          <AuthButton type="submit">Создать аккаунт</AuthButton>
+          <AuthButton
+            onClick={() => {
+              navigate("/register/tourmate");
+            }}
+            type="submit"
+          >
+            Создать аккаунт
+          </AuthButton>
           <p className="Register__conf_policy">
             Создавая аккаунт, вы принимаете «Публичную оферту» и «Политику
             конфиденциальности».
