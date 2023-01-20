@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 import ReserveTour from "./container/ReserveTour/ReserveTour";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import ReservationAuth from "./container/ReservationAuth/ReservationAuth";
+import RegisterTourmate from "./container/RegisterTourmate/RegisterTourmate";
 function App() {
   const user = useSelector((state) => state.users.user);
 
@@ -31,6 +32,7 @@ function App() {
         <Route path={"/:id"} element={<Tourmate />} />
         <Route path="/tours/:id" element={<Tour />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/register-tourmate" element={<RegisterTourmate />} />
         <Route path="/register/email" element={<RegisterEmail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/map" element={<MapBlock />} />

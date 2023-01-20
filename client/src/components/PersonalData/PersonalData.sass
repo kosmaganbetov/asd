@@ -1,0 +1,93 @@
+.form_container 
+  display: flex
+  justify-content: center
+
+.first_column
+  display: flex
+  flex-direction: column
+  & input 
+    width: 300px
+    padding: 13px 35px
+    margin: 25px 25px 0 25px
+    border: 1px solid #000
+  & label 
+    position: relative
+    & span
+      position: absolute
+      top: 15px
+      left: 40px
+      background: #fff
+      padding: 0 10px
+      color: rgb(0 0 0 / 44%)
+
+.second_column
+  display: flex
+  flex-direction: column
+  & input
+    width: 300px
+    padding: 13px 35px
+    margin: 25px 25px 0 25px
+    border: 1px solid #000
+  & select 
+    width: 371px
+    padding: 13px 35px
+    margin: 25px 25px 0 25px
+    border: 1px solid #000
+    font-size: 20px
+    color: rgb(0 0 0 / 44%)
+  & label 
+    position: relative
+    & span
+      position: absolute
+      top: 15px
+      left: 40px
+      background: #fff
+      padding: 0 10px
+      color: rgb(0 0 0 / 44%)
+
+.gender 
+  display: flex
+  justify-content: space-evenly
+  &_man 
+    background: url("../../assets/icons/icon-checkout.png") no-repeat
+    background-size: 32px
+    padding-bottom: 33px
+    background-position: bottom
+  &_woman
+    background: url("../../assets/icons/icon-check.png") no-repeat
+    background-size: 32px
+    padding-bottom: 33px
+    background-position: bottom
+
+.languages 
+  display: grid
+  grid-template-columns: 1fr 1fr
+  margin: 20px
+  & span 
+    padding: 12px 25px 12px 50px
+    border-radius: 42px
+    background: url("../../assets/icons/x.png") no-repeat #D9D9D9
+    background-size: 14px
+    background-position: 90% 15px
+    margin: 10px
+
+.buttons 
+  display: flex
+  justify-content: space-between
+  margin: 30px
+  margin-top: 60px
+
+.button_save
+  border: 1px solid #000
+  border-radius: 20px
+  padding: 10px 20px
+  background: #fff
+  font-size: 22px
+
+.button_next
+  border: 1px solid #737DFE
+  border-radius: 20px
+  padding: 10px 20px
+  background: #737DFE
+  font-size: 22px
+  color: #fff
