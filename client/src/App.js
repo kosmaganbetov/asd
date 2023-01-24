@@ -32,6 +32,7 @@ function App() {
         <Route path={"/:id"} element={<Tourmate />} />
         <Route path="/tours/:id" element={<Tour />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/register-tourmate" element={<RegisterTourmate />} />
         <Route path="/register/email" element={<RegisterEmail />} />
         <Route path="/login" element={<Login />} />
         <Route path="/map" element={<MapBlock />} />
