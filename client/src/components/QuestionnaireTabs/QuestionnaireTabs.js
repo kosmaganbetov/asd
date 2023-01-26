@@ -2,8 +2,6 @@ import { useState } from "react";
 import "./QuestionnaireTabs.sass";
 
 const QuestionnaireTabs = ({ content1, content2, content3 }) => {
-  const [currentTab, setCurrentTab] = useState();
-
   const tabs = [
     {
       id: 1,
@@ -21,11 +19,12 @@ const QuestionnaireTabs = ({ content1, content2, content3 }) => {
       content: content3,
     },
   ];
+  const [currentTab, setCurrentTab] = useState(tabs[0].id);
 
-  const handleTabClick = (e) => {
-    setCurrentTab(e.target.id);
+  const handleTabClick = (id) => {
+    setCurrentTab(id);
   };
-
+  console.log(tabs);
   console.log(currentTab);
   return (
     <div>
@@ -35,16 +34,16 @@ const QuestionnaireTabs = ({ content1, content2, content3 }) => {
             <span
               className="tab_title"
               style={{
-                background: currentTab === `${tab.id}` ? "#E6F5FF" : "",
-                color: currentTab === `${tab.id}` ? "#3D4EAC" : "#000",
+                background: currentTab === tab.id ? "#E6F5FF" : "",
+                color: currentTab === tab.id ? "#3D4EAC" : "#000",
               }}
               key={tab.id}
               id={tab.id}
-              onClick={(e) => handleTabClick(e)}
+              onClick={() => handleTabClick(tab.id)}
             >
               {tab.id}. {tab.tabTitle}
               <span
-                className={currentTab === `${tab.id}` ? "tab_title_after" : ""}
+                className={currentTab === tab.id ? "tab_title_after" : ""}
               ></span>
             </span>
           );
@@ -53,7 +52,7 @@ const QuestionnaireTabs = ({ content1, content2, content3 }) => {
       <div>
         {tabs.map((tab) => {
           return (
-            <div key={tab.id}>{currentTab === `${tab.id}` && tab.content}</div>
+            <div key={tab.id}>{currentTab === tab.id ? tab.content : null}</div>
           );
         })}
       </div>

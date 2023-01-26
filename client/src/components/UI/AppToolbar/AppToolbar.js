@@ -12,7 +12,9 @@ const AppTollbar = (props) => {
         </Link>
       </div>
       <div className="header_links">
-        <Link className="header_links_link">Стать Турмэйтом</Link>
+        <Link to="/register/tourmate" className="header_links_link">
+          Стать Турмэйтом
+        </Link>
         <Link className="header_links_link">Каз/KZT</Link>
         {props.user ? <UserMenu user={props.user} /> : <AnonymousMenu />}
       </div>
